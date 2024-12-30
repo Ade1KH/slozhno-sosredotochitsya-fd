@@ -127,6 +127,8 @@
 
 .header__subtitle {
   padding: 0 50px 0 0;
+  font-weight: var(--font-bold);
+  font-size: var(--subtitle-font-size);
 }
 
 .text-shadow {
@@ -170,11 +172,6 @@
   font-weight: var(--font-bold);
   font-size: var(--font-size);
   line-height: var(--line-height);
-}
-
-.header__subtitle {
-  font-weight: var(--font-bold);
-  font-size: var(--subtitle-font-size);
 }
 
 .content {
