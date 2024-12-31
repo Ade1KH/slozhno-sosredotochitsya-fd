@@ -20,6 +20,7 @@
   --border-color: var(--accent-color);
   --main-link-color: var(--main-text-color);
   --link-color: var(--main-text-color);
+  --button-hover-color: rgba(255, 0, 112, 0.4);
 }
 
 .theme-dark .page {

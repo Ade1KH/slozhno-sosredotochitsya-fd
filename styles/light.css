@@ -21,6 +21,7 @@
   --main-text-color: var(--light-theme-color);
   --main-link-color: var(--light-theme-color);
   --link-color: var(--light-theme-color);
+  --button-hover-color: rgba(50, 49, 45, 0.4);
 }
 
 .theme-light .page {
@@ -42,5 +43,6 @@
     --main-text-color: var(--light-theme-color);
     --main-link-color: var(--light-theme-color);
     --link-color: var(--light-theme-color);
+    --button-hover-color: rgba(50, 49, 45, 0.4);
   }
 }

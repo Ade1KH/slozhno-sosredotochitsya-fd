@@ -5,7 +5,7 @@
 
 :root {
   --font-main: "IBM Plex mono";
-  --line-height: 23px;
+  --line-height: 23.4px;
   --font-reglar: 400;
   --font-bold: 700;
   --subtitle-font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);

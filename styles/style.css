@@ -1,8 +1,10 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   position: relative;
-  padding: 10px;
   font-family: var(--font-main);
   font-size: var(--text-size);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
@@ -15,14 +17,18 @@
 
 .header {
   display: grid;
-  justify-self: center;
-  align-items: start;
-  height: 100vh;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
   min-height: 668px;
+  height: 100vh;
+  margin: 0 10px;
 }
 
 .header__rec {
   display: flex;
+  position: absolute;
+  top: 10px;
+  right: 0;
   justify-content: end;
   align-items: center;
   gap: 13px;
@@ -32,7 +38,7 @@
   font-family: var(--font-main);
   font-weight: var(--font-regular);
   font-size: var(--font-size);
-  line-height: var(--line-height);
+  line-height: 25px;
 }
 
 .header__rec::after {
@@ -46,9 +52,9 @@
 }
 
 .decorated-zone::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   border-top: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
@@ -59,7 +65,7 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 0;
   border-bottom: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
@@ -78,14 +84,13 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 13px;
   list-style: none;
 }
 
 .header__theme-menu-button {
-  border: none;
   padding: 2.5px 13px;
-  outline: 1px solid transparent;
+  border: 1px solid transparent;
   color: var(--header-button-color);
   font-family: var(--font-main);
   font-weight: var(--font-regular);
@@ -103,7 +108,7 @@
 }
 
 .header__theme-menu-item:hover {
-  outline: 1px solid var(--border-color);
+  outline: 1px solid var(--button-hover-color);
 }
 
 .header__theme-menu-button_active {
@@ -115,20 +120,21 @@
   color: var(--title-color);
   font-family: var(--font-main), sans-serif;
   font-size: var(--title-font-size);
-  line-height: var(--title-line-height);
+  font-weight: var(--font-bold);
+  line-height: 96px;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .subtitle {
   justify-self: end;
-  max-width: 364px;
-  margin-block-end: 38px;
 }
 
 .header__subtitle {
   padding: 0 50px 0 0;
   font-weight: var(--font-bold);
   font-size: var(--subtitle-font-size);
+  margin: 0;
+  max-width: 364px;
 }
 
 .text-shadow {
@@ -150,7 +156,7 @@
   outline: 1px solid var(--main-link-color);
 }
 
-.title-decor {
+.section__list-title {
   color: var(--text-subtitle-color);
   font-family: var(--font-main);
   font-size: var(--font-size);
@@ -158,7 +164,7 @@
   background-color: var(--accent-color);
 }
 
-.text-decor {
+.section__list-text {
   color: var(--main-text-color);
   font-family: var(--font-main);
   font-weight: var(--font-regular);
@@ -166,7 +172,7 @@
   line-height: var(--line-height);
 }
 
-.article__title-decor {
+.section__title {
   color: var(--main-title-color);
   font-family: var(--font-main);
   font-weight: var(--font-bold);
@@ -174,56 +180,62 @@
   line-height: var(--line-height);
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin-top: 30px;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-section);
-}
-
-.main__row-advice-title {
-  font-weight: var(--font-regular);
-}
-
-.dopamine {
-  margin-top: 27px;
-}
-
-.main__column-section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-section);
-  margin-top: 27px;
-}
-
-.main__row-section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-section);
-}
-
-.title-margin {
-  margin-bottom: 11px;
-}
-
-.gallery {
-  margin-top: 10px;
-}
-
-.images__list {
+.section__list-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 0 10px 0 10px;
+}
+
+.section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__simple-title {
+  font-weight: var(--font-bold);
+  color: var(--text-subtitle-color);
+  background-color: var(--accent-color);
+}
+
+.section__title-regular {
+  font-weight: var(--font-regular);
+}
+
+.wrapper__section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.images__list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .images-item {
   object-fit: cover;
+  object-position: top;
   block-size: 100%;
   inline-size: 100%;
 }
@@ -232,8 +244,7 @@
   display: grid;
   align-items: center;
   height: 100vh;
-  min-height: 667px;
-  margin-top: 25px;
+  margin: 0 10px 10px 10px;
 }
 
 .footer__title {
@@ -245,58 +256,62 @@
   text-align: center;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
+  
   .page {
-    padding: 20px;
+    gap: 50px;
   }
 
   .header {
-    width: 100%;
-    max-height: 1004px;
+    margin: 10px 20px 0 20px;
   }
 
-  .header__theme-menu {
-    margin-bottom: 25px;
+  .decorated-zone::after {
+    bottom: 30px;
   }
 
   .header__title {
     margin: 0 0px 0px -20px;
     font-size: var(--title-font-desctop);
+    line-height: 99px;
   }
 
   .subtitle {
     justify-self: end;
     max-width: 364px;
-    max-height: 117px;
-    margin-bottom: 39px;
-  }
-
-  .content {
-    gap: 80px;
-    margin-top: 60px;
+    margin-bottom: 40px;
   }
 
   .main {
-    display: grid;
-    grid-template-columns: 236px 1fr;
-    gap: var(--gap-section);
+    margin: 0 20px 0 20px;
+    gap: 80px;
   }
 
-  .main__column-title {
+  .section__reason {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+  }
+
+  .section__reduces-title {
     max-width: 236px;
   }
 
-  .main__row {
+  .section__better {
     display: grid;
-    grid-template-columns: 1fr 472px;
+    grid-template-columns: 236px 1fr;
   }
 
-  .title-margin {
-    margin-bottom: 8px;
+  .wrapper__section {
+    grid-column: 2;
+    gap: 20px;
+  }
+
+  .section__list {
+    gap: 20px;
   }
 
   .gallery {
-    margin-top: 20px;
+    gap: 20px;
   }
 
   .images__list {
@@ -335,7 +350,8 @@
   }
 
   .footer {
-    margin-top: 60px;
+    margin: 20px;
+    height: 100vh;
   }
 
   .footer__title {
@@ -344,15 +360,11 @@
 }
 
 @media (min-width: 1024px) {
-  .header {
-    grid-template-columns: 1fr min-content 1fr;
-  }
-
+ 
   .header__theme-menu {
-    grid-column: 2/3;
-    grid-row: 1;
     justify-self: center;
     align-self: start;
+    margin: 10px 0 0;
   }
 
   .header__theme-menu-list {
@@ -360,51 +372,39 @@
   }
 
   .header__title {
-    grid-column: 1/3;
-    grid-row: 2;
+    font-size: var(--title-font-desctop);
     align-self: center;
     white-space: nowrap;
-  }
-
-  .decorated-zone {
-    max-width: 983px;
-    max-height: 748px;
+    line-height: 130px;
   }
 
   .subtitle {
-    grid-column: 2/4;
-    align-self: center;
     min-width: 493px;
-    max-height: 70px;
+    max-height: 71px; 
+    margin-bottom: 40px;
   }
 
-  .header__rec {
-    grid-column: 3;
-    grid-row: 1;
+  .header__subtitle {
+    padding: 0;
+    margin: 0;
+    max-width: none;
   }
 
-  .content {
-    justify-self: center;
-    max-width: 984px;
+  .section__reason {
+    grid-template-columns: 314px 1fr;
   }
 
-  .main {
-    grid-template-columns: 315px 1fr;
-  }
-
-  .main__column-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .main__column-title {
+  .section__reduces-title {
     max-width: 315px;
-    block-size: 47px;
   }
 
-  .main__row {
+  .section__list-reduces {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section__better {
     grid-template-columns: 315px 1fr;
-    gap: var(--gap-section);
   }
 
   .images__list-item:nth-child(1) {
@@ -428,9 +428,6 @@
   }
 
   .footer {
-    justify-self: center;
-    margin-top: 80px;
-    inline-size: 984px;
-    block-size: 748px;
+    font-size: var(--title-font-desctop);
   }
 }
